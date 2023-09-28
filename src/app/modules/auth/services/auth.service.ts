@@ -29,9 +29,23 @@ export class AuthService {
   }
   
   logout():void{
-    this.router.navigate(['/auth/signin']);
     localStorage.removeItem('userLogged'); 
   }
+  
+  verifyTokenExpiration():boolean|null{
+    const userInStorage = localStorage.getItem('userLogged');
+    if (userInStorage){
+      const user:UserTokenInterface = JSON.parse(userInStorage);
+      if (user.accessToken){
+        const tokenPayload = user.accessToken.split('.')[1];
+        const decodedPayload = atob(tokenPayload);
+        const payloadObj = JSON.parse(decodedPayload);
+        return Date.now() > payloadObj.exp * 1000
+      }
+ 
+    } 
+    return null;
 
+  }
 
 }

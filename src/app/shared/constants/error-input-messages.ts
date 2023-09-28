@@ -1,8 +1,9 @@
 export const ErrorInputMessage = {
-  required: 'Este campo es requerido',
-  email: 'El correo no es válido (example@gmail.com)',
-  onlyLetters: 'Este campo solo acepta letras',
-  onlyNumbers: 'Este  campo solo acepta números',
-  maxLength: 'Este campo tiene un máximo de caracteres: ',
-  minLength: 'Este campo tiene un mínimo de caracteres: '
+  required: 'This field is required',
+  email: 'Email is not valid (example@gmail.com)',
+  dni: 'DNI is not valid (99999999)',
+  onlyLetters: 'This field only allows letters',
+  onlyNumbers: 'This field only allows numbers',
+  maxLength: 'This field has a max length: ',
+  minLength: 'This field has a min length: '
 }

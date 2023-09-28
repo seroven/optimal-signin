@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PanelLayoutComponent } from './layout/panel-layout/panel-layout.component';
 import { isLoggedGuard } from './modules/auth/guards/is-logged.guard';
+import { isNotLoggedGuard } from './modules/auth/guards/is-not-logged.guard';
 
 const routes: Routes = [
   { 

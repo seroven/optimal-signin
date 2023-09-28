@@ -44,7 +44,7 @@ export class SigninPageComponent {
         if (response.accessToken){
           this.toastService.showMessage(EnumTypeMessage.LOGIN_SUCCESS);
           this.authService.setUserLogged(response);
-          this.router.navigate(['/panel/about']);
+          this.router.navigate(['/panel/client']);
         } else {
           this.toastService.showMessage(EnumTypeMessage.LOGIN_ERROR);
         }

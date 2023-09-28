@@ -4,24 +4,16 @@ import { AuthService } from '../services/auth.service';
 import { ToastService } from 'src/app/shared/services/toast.service';
 import { EnumTypeMessage } from 'src/app/shared/enums/type-message.enum';
 
-export const isLoggedGuard: CanMatchFn = (route, state) => {
-
-  
+export const isNotLoggedGuard: CanMatchFn = (route, state) => {
 
     const userInStorage = localStorage.getItem('userLogged');
 
     const router = inject(Router);
     const toastService = inject(ToastService);
-    const authService = inject(AuthService);
     if (userInStorage == null){
-      return router.createUrlTree(['/auth/signin']);
+      return true;
     } else {
-      if(authService.verifyTokenExpiration()){
-        toastService.showMessage(EnumTypeMessage.EXPIRED_TOKEN);
-        authService.logout();
-        return router.createUrlTree(['/auth/signin']);
-      } else {
-        return true;
-      }
+      toastService.showMessage(EnumTypeMessage.USER_LOGGED);
+      return router.createUrlTree(['/panel/client']);
     }
 };
