@@ -15,7 +15,8 @@ import { DividerModule } from 'primeng/divider';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { TooltipModule } from 'primeng/tooltip';
 import { AccordionModule } from 'primeng/accordion';
-
+import { MenuModule } from 'primeng/menu';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [],
@@ -34,7 +35,9 @@ import { AccordionModule } from 'primeng/accordion';
     RadioButtonModule,
     DividerModule,
     SplitButtonModule,
-    AccordionModule
+    AccordionModule,
+    MenuModule,
+    ToastModule
   ],
   exports: [
     CommonModule,
@@ -52,7 +55,9 @@ import { AccordionModule } from 'primeng/accordion';
     RadioButtonModule,
     DividerModule,
     SplitButtonModule,
-    AccordionModule
+    AccordionModule,
+    MenuModule,
+    ToastModule
   ]
 })
 export class PrimeNgSharedModule { }

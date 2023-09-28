@@ -1,1 +1,7 @@
-<p>panel-layout-header works!</p>
+<div class="w-full flex justify-content-between align-items-center h-4rem border-bottom-1 border-gray-500 px-4 py-2">
+    <div></div>
+    <div class="h-full">
+        <p-menu #menu [model]="items" [popup]="true"></p-menu>
+        <img class="border-round-lg hover-cursor hover:opacity-20 h-full" (click)="menu.toggle($event)" src="assets/img/user-photo.jpg">
+    </div>
+</div>

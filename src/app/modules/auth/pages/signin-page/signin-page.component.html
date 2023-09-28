@@ -1,1 +1,110 @@
-<p>signin-page works!</p>
+
+<div class="flex h-screen w-screen">
+    <div
+      class="relative hidden flex-1 align-items-center justify-content-center bg-primary bg-cover lg:flex"
+    >
+      <div class="absolute auth-bg2 w-full h-full"></div>
+      <div class="absolute bg-primary w-full h-full opacity-50"></div>
+      <div class="absolute  mt-3 p-8 text-center text-white">
+        <p>
+          <span class="text-5xl font-semibold"
+            >Municipalidad de San Isidro</span
+          >
+          <br/>
+          <span class="text-2xl"
+            >Sistema de Información Catastral</span
+          >
+        </p>
+      </div>
+    </div>
+    <div
+      class="flex flex-1 align-items-center justify-content-center"
+    >
+      <div class="max-w-md overflow-y-auto flex align-items-center flex-column">
+        <span class="text-3xl font-semibold">Inicio de Sesión</span>
+        <div class="p-4" style="width: 500px;">
+            <form [formGroup]="formAuth">
+              <div class="form-group">
+                <span class="p-float-label">
+                  <input
+                    id="username"
+                    formControlName="username"
+                    type="text"
+                    placeholder="example@email.com"
+                    pInputText
+                    [class]="validateFormAuth.classValidated('username', 'w-full')"
+                  />
+                  <label for="username" >Correo<span class="p-error">*</span> </label>
+                </span>
+              
+                <div *ngIf="validateFormAuth.isNotValid('email')">
+                  <div
+                    class="p-error"
+                    *ngIf="validateFormAuth.isNotRuleValid('email', 'required')"
+                  >
+                    {{ errorInputMessage.required }}
+                  </div>
+                  <div
+                    class="p-error"
+                    *ngIf="validateFormAuth.isNotRuleValid('email', 'pattern')"
+                  >
+                    {{ errorInputMessage.email }}
+                  </div>
+                </div>
+              </div>
+          
+              <div class="form-group">
+          
+                <span class="p-float-label">
+                  <p-password
+                    inputId="password"
+                    formControlName="password"
+                    type="password"
+                    placeholder="**********"
+                    inputStyleClass="w-full"
+                    [toggleMask]="true"
+                    appendTo="body"
+                    [class]="
+                      validateFormAuth.classValidated(
+                        'password',
+                        'w-full display-grid-important'
+                      )
+                    "
+                  />
+                  <label for="password">Password <span class="p-error">*</span></label>
+                </span>
+          
+                <div *ngIf="validateFormAuth.isNotValid('password')">
+                  <div
+                    class="p-error"
+                    *ngIf="validateFormAuth.isNotRuleValid('password', 'required')"
+                  >
+                    {{ errorInputMessage.required }}
+                  </div>
+                  <div
+                    class="p-error"
+                    *ngIf="validateFormAuth.isNotRuleValid('password', 'maxlength')"
+                  >
+                    {{ errorInputMessage.maxLength + "12" }}
+                  </div>
+                </div>
+          
+              </div>
+
+              <div class="w-full mt-4">
+                <p-button
+                  [loading]="loadSubmit"
+                  label="Sign In"
+                  icon="pi pi-user"
+                  class="w-full display-grid-important login-button"
+                  (click)="submit()"
+                ></p-button>
+              </div>
+            </form>
+          </div>
+          
+          
+      </div>
+    </div>
+  </div>
+  

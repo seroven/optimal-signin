@@ -1,2 +1,39 @@
-<p>panel-layout works!</p>
-<router-outlet></router-outlet>
+<div class="w-screen h-screen flex">
+    <div [className]="'flex-none relative h-full bg-orange-500 text-white transition-ease-in-out transition-duration-300 transition-all w-5rem md:' + (openSidebar ? 'w-18rem' : 'w-5rem')">
+        <div class="hidden md:flex w-full  justify-content-center py-4 px-3">
+            <img class="h-3rem" src="assets/img/logo.png">
+        </div>
+
+        <div class="w-full mt-2 md:mt-0 mb-3 overflow-auto">
+            <div *ngFor="let itemGroup of items">
+                <div class="hidden md:block my-2 font-semibold px-3 text-md">
+                    {{ itemGroup.title.toUpperCase() }}
+                </div>
+                <div 
+                    *ngFor="let item of itemGroup.items" 
+                    class="hover:bg-orange-400 hover-cursor focus:bg-orange-300 flex justify-content-center md:justify-content-start align-items-center p-3 text" 
+                    (click)="redirect(item.path)" 
+                >
+                    <i [className]="' text-xl md:text-lg pi ' + item.icon"></i>
+                    <span class="hidden md:inline ml-2" >{{ item.name }}</span>
+                </div>
+                <div class="block md:hidden mx-4 border-bottom-2"></div>
+
+            </div>
+
+        </div>
+        
+        <div class="absolute h-3rem bg-orange-600 flex justify-content-center md:justify-content-end align-items-center md:pr-3 bottom-0 right-0 left-0">
+            
+        </div>
+
+    </div>
+
+    <div class="flex-auto">
+        <app-panel-layout-header></app-panel-layout-header>
+        <div class="py-4 px-6">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+</div>

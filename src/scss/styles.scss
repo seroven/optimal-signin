@@ -1,5 +1,16 @@
-@import "primeng/resources/themes/lara-light-blue/theme.css";
-@import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 
-@import './custom';
+@import "./custom";
+
+@font-face {
+    font-family: 'poppins';
+    src: url('../fonts/poppins.ttf');
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-family: 'poppins';
+}
+
