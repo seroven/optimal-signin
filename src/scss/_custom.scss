@@ -1,0 +1,44 @@
+.hover-cursor:hover {
+  cursor: pointer;
+}
+
+//Custom classes
+.display-grid-important {
+  display: grid !important;
+}
+
+.w-full-important {
+  width: 100% !important;
+}
+
+.display-grid-input-button {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 10px;
+  width: 100%;
+}
+
+.form-group {
+  margin-top: 2rem;
+}
+
+// Modifying existing classes in primeng and coreUI
+
+.p-error {
+  margin-top: 4px;
+}
+
+.p-inputtext {
+  padding: 0.5rem 0.5rem;
+  font-size: 13px;
+}
+
+.login-button span {
+  font-size: 14px !important;
+  padding: 0.2rem 0rem !important;
+}
+
+.p-button {
+  padding: 0.5rem 0.8rem;
+  font-size: 12px !important;
+}
