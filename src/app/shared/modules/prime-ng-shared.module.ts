@@ -17,6 +17,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { AccordionModule } from 'primeng/accordion';
 import { MenuModule } from 'primeng/menu';
 import { ToastModule } from 'primeng/toast';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 @NgModule({
   declarations: [],
@@ -37,7 +38,8 @@ import { ToastModule } from 'primeng/toast';
     SplitButtonModule,
     AccordionModule,
     MenuModule,
-    ToastModule
+    ToastModule,
+    AutoCompleteModule
   ],
   exports: [
     CommonModule,
@@ -57,7 +59,8 @@ import { ToastModule } from 'primeng/toast';
     SplitButtonModule,
     AccordionModule,
     MenuModule,
-    ToastModule
+    ToastModule,
+    AutoCompleteModule
   ]
 })
 export class PrimeNgSharedModule { }

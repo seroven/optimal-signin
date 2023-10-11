@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClientMainPageComponent } from './pages/client-main-page/client-main-page.component';
 import { ClientRoutingModule } from './client-routing.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -11,6 +12,7 @@ import { ClientRoutingModule } from './client-routing.module';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     ClientRoutingModule
   ]
 })

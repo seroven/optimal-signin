@@ -1,1 +1,4 @@
-<p>client-main-page works!</p>
+
+<div class="card flex justify-content-center">
+  <p-autoComplete [(ngModel)]="selectedCountry" [dropdown]="true" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="value"></p-autoComplete>
+</div>
